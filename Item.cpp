@@ -3,22 +3,36 @@
 using namespace std;
 
 // 4. Implement Default Constructor Implementation
+Item::Item()
+{
+  unitPrice = 0;
+  itemCode = 0;
+  discount = 0;
+}
 // 5. Implement Overloaded Constructor Implementation
+Item::Item(int code , float price)
+{
+  itemCode = code;
+  unitPrice = price;
+}
 // 6. Implement Destructor (display "Destructor Called")
+Item::~ Item()
+{
+  cout << "Destructor called" << endl;
+}
 
-void Item::setDiscount(float pdiscount) {
+void Item::setDiscount(float pdiscount) 
+{
   discount = pdiscount;
 }
 
-float Item::getDiscount() {
-  return discount;
+float Item::discountedPrice()
+{
+  return unitPrice - unitPrice * discount/100;
 }
 
-float Item::discountedPrice() {
-   return unitPrice - unitPrice * discount/100;
-}
-
-void Item::display() {
+void Item::display()
+{
   cout << "Item : " << itemCode << endl;
-  cout << "Discounted Price " << discountedPrice() << endl;
+  cout << "discount : " << discountedPrice() << endl;
 }

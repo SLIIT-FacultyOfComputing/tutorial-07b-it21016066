@@ -14,4 +14,7 @@ class Item {
       float getDiscount();
       float discountedPrice();
       void display();
+      Item();
+      Item(int code,float price);
+      ~Item();
 };

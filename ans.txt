@@ -1,0 +1,6 @@
+Item : 0
+discount : 0
+Item : 100
+discount : 800
+Destructor called
+Destructor called
